@@ -71,7 +71,7 @@ void restrictedOptimizationHandler::simplex<Type>::simplexOptimization(const Lin
         this->cost = ((~cb)*Abinv*b)(1,1);
         xb = Abinv*b;
         unsigned contFlag = 0;
-        std::cout << r << std::endl;
+//        std::cout << r << std::endl;
         for (unsigned i=1; i <= r.getNumberOfColumns(); ++i)
            if(r(1,i) <= 0) //Modificar o sinal para maximizar: <= ou menimizar: >=
            {
@@ -116,6 +116,10 @@ void restrictedOptimizationHandler::simplex<Type>::simplexOptimization(const Lin
 //    N = LinAlg::sortColumnVector<Type>(N);
 //    B = LinAlg::sortColumnVector<Type>(B);
 }
+
+
+
+
 
 template <typename Type>
 LinAlg::Matrix<Type> restrictedOptimizationHandler::simplex<Type>::EscalSimplex(LinAlg::Matrix<Type> A,

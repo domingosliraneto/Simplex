@@ -7,7 +7,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->widget_simplex->hide();
-
+    ui->widget_3->hide();
+    ui->label_otima->hide();
 
 }
 
@@ -72,27 +73,107 @@ void MainWindow::on_pushButton_continuar_clicked()
         msg.exec();
     }
 
-//    restrictedOptimizationHandler::linProg<double> *opt = new restrictedOptimizationHandler::simplex<double> ();
+    std::string qqtdvariaveis;
+    for (int i=1;i<=qtd_variaveis;i++){
+        qqtdvariaveis += 'X'+ std::to_string(i) + ' ';
+    }
+    qqtdvariaveis += "≥ 0";
+    ui->label_restricaotodos->setText(QString::fromStdString(qqtdvariaveis));
 
-    LinAlg::Matrix<double> A,b;
 
-    A = "20,30;1,0;0,1";
-    b = "1200;40;30";
+}
+
+void MainWindow::on_pushButton_calcular_clicked()
+{
+    LinAlg::Matrix<double> A,b,func;
+    QString stringfuncao;
+
+    if (!ui->Funcao_x1->text().isEmpty()){
+        stringfuncao += ui->Funcao_x1->text();
+        stringfuncao += ";";
+    }
+    if (!ui->Funcao_x2->text().isEmpty()){
+        stringfuncao += ui->Funcao_x2->text();
+        stringfuncao += ";";
+    }
+    if (!ui->Funcao_x3->text().isEmpty()){
+        stringfuncao += ui->Funcao_x3->text();
+        stringfuncao += ";";
+    }
+    if (!ui->Funcao_x4->text().isEmpty()){
+        stringfuncao += ui->Funcao_x4->text();
+    }
+    func= LinAlg::Matrix<double>(stringfuncao.toStdString()) ;
+
+    A = LinAlg::Matrix<double>(ui->lineEdit_A->text().toStdString());
+    b = LinAlg::Matrix<double>(ui->lineEdit_b->text().toStdString());
 
     MatrixRestrictionHandler::MatrixPositiveInequality<double> P = (A < b);
     MatrixRestrictionHandler::MatrixNegativeInequality<double> N;// = (A > b);
     MatrixRestrictionHandler::MatrixEquality<double> E; //= (A == b);
-//    (*opt) = P;
+
+    if (ui->comboBox_inequacao->currentIndex() == 0){
+        P = (A < b);
+        std::cout << "inequacao de menor igual" << std::endl;
+    } else if (ui->comboBox_inequacao->currentIndex() == 1){
+        E = (A == b);
+        std::cout << "inequacao de igualdade" << std::endl;
+    } else if (ui->comboBox_inequacao->currentIndex() == 2){
+        N = (A > b);
+        std::cout << "inequacao de maior igual" << std::endl;
+    }
+
 
     restrictedOptimizationHandler::simplex<double> simp;
     simp.setRestrictions(E,N,P);
-    simp.setfunction2Optimize("1000;1800");
+    simp.setfunction2Optimize(func);
     simp.optimize();
-    std::cout << simp.getOptimizatedValue() << std::endl;
-//    opt->setfunction2Optimize("-1000;-1800");
-//    opt->optimize();
+
+    LinAlg::Matrix<double> resultado = simp.getOptimizatedValue();
+
+    std::string variaveis;
+
+    for (int i=1;i<=qtd_variaveis;i++){
+        std::ostringstream ostr; ostr << resultado(i,1);
+        variaveis += 'X'+ std::to_string(i) + '=' +  ostr.str() + ' ';
+    }
 
 
 
-//   std::cout << opt->getOptimizatedValue() << std::endl;
+    QString Qvariaveis = QString::fromStdString(variaveis);
+    QLabel *Xs = new QLabel();
+    Xs->setText(Qvariaveis);
+    Xs->setStyleSheet("font: 12pt;");
+
+    ui->horizontalLayout_5->addWidget(Xs,Qt::AlignCenter);
+
+    int result = 0;
+
+    for (int i=1;i<=qtd_restricoes;i++){
+        result = result + (func(i,1)*resultado(i,1));
+    }
+
+    std::ostringstream strs;
+    strs << result;
+    std::string str = strs.str();
+    ui->label_solucao_Z->setText(QString::fromStdString(str));
+    ui->widget_3->show();
+    ui->label_otima->show();
+
+}
+
+void MainWindow::on_pushButton_reiniciar_clicked()
+{
+    QProcess::startDetached(QApplication::applicationFilePath());
+    exit(12);
+}
+
+void MainWindow::on_comboBox_objetivo_currentTextChanged(const QString &arg1)
+{
+    if (arg1 == "Minimizar"){
+        QMessageBox msg; msg.setText("Para Minimizar, necessário alterar no arquivo Simplex.hpp na linha 76!");
+        msg.exec();
+        ui->comboBox_objetivo->setCurrentIndex(0);
+    }
+
 }

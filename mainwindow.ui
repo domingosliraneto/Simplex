@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1174</width>
-    <height>614</height>
+    <width>430</width>
+    <height>703</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>SIMPLEX - EngComp 2018.2 - UNP</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>500</x>
-      <y>0</y>
+      <x>130</x>
+      <y>10</y>
       <width>171</width>
       <height>41</height>
      </rect>
@@ -40,684 +40,447 @@
    <widget class="QWidget" name="widget_inicio" native="true">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>70</y>
-      <width>384</width>
-      <height>161</height>
+      <x>20</x>
+      <y>60</y>
+      <width>391</width>
+      <height>97</height>
      </rect>
     </property>
-    <widget class="QPushButton" name="pushButton_continuar">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>120</y>
-       <width>75</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Continuar</string>
-     </property>
-    </widget>
-    <widget class="QWidget" name="">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>40</y>
-       <width>364</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>Quantas variáveis de decisão tem o problema?</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="lineEdit_NumVariaveis"/>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QWidget" name="">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>80</y>
-       <width>237</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string>Quantas restrições?</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="lineEdit_NumRestricoes"/>
-      </item>
-     </layout>
-    </widget>
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Quantas variáveis de decisão tem o problema?</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_NumVariaveis">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="1" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Quantas restrições?</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_NumRestricoes">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="pushButton_continuar">
+       <property name="text">
+        <string>Continuar</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
    <widget class="QWidget" name="widget_simplex" native="true">
     <property name="geometry">
      <rect>
-      <x>510</x>
-      <y>70</y>
-      <width>641</width>
+      <x>10</x>
+      <y>160</y>
+      <width>411</width>
       <height>481</height>
      </rect>
     </property>
     <widget class="QWidget" name="widget" native="true">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>10</y>
-       <width>561</width>
-       <height>121</height>
+       <x>10</x>
+       <y>0</y>
+       <width>391</width>
+       <height>68</height>
       </rect>
      </property>
-     <widget class="QWidget" name="">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>70</y>
-        <width>521</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
-       <item>
-        <widget class="QLabel" name="label_8">
-         <property name="text">
-          <string>Função:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="Funcao_x1"/>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_x1">
-         <property name="text">
-          <string>X1</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_plus_x1">
-         <property name="text">
-          <string>+</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="Funcao_x2"/>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_x2">
-         <property name="text">
-          <string>X2</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_plus_x2">
-         <property name="text">
-          <string>+</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="Funcao_x3"/>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_x3">
-         <property name="text">
-          <string>X3</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_plus_x3">
-         <property name="text">
-          <string>+</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="Funcao_x4"/>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_x4">
-         <property name="text">
-          <string>X4</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>30</y>
-        <width>281</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_4">
-       <item>
-        <widget class="QLabel" name="label_9">
-         <property name="text">
-          <string>Qual objetivo da função?</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QComboBox" name="comboBox">
-         <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLabel" name="label_9">
           <property name="text">
-           <string>Maximizar</string>
+           <string>Qual objetivo da função?</string>
           </property>
-         </item>
-         <item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBox_objetivo">
+          <item>
+           <property name="text">
+            <string>Maximizar</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Minimizar</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="label_8">
           <property name="text">
-           <string>Minimizar</string>
+           <string>Função:</string>
           </property>
-         </item>
-        </widget>
-       </item>
-      </layout>
-     </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="Funcao_x1">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_x1">
+          <property name="text">
+           <string>X1</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_plus_x1">
+          <property name="text">
+           <string>+</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="Funcao_x2">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_x2">
+          <property name="text">
+           <string>X2</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_plus_x2">
+          <property name="text">
+           <string>+</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="Funcao_x3"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_x3">
+          <property name="text">
+           <string>X3</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_plus_x3">
+          <property name="text">
+           <string>+</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="Funcao_x4"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_x4">
+          <property name="text">
+           <string>X4</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </widget>
     <widget class="QWidget" name="widget_2" native="true">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>150</y>
-       <width>561</width>
-       <height>251</height>
+       <x>10</x>
+       <y>70</y>
+       <width>391</width>
+       <height>221</height>
       </rect>
      </property>
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>260</x>
+        <x>20</x>
         <y>10</y>
-        <width>61</width>
-        <height>16</height>
+        <width>91</width>
+        <height>21</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>Restrições:</string>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QLineEdit" name="lineEdit_A">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>90</y>
+        <width>201</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_b">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>90</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>50</y>
+        <width>21</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>A</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>50</y>
+        <width>21</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>b</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_inequacao">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>90</y>
+        <width>41</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>≤</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>=</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>≥</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_restricaotodos">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>130</y>
+        <width>241</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_calcular">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>190</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Calcular</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_reiniciar">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>190</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Reiniciar</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="widget_3" native="true">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>330</y>
+       <width>561</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>161</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Resultado:</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>20</x>
         <y>50</y>
-        <width>531</width>
-        <height>171</height>
+        <width>351</width>
+        <height>25</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
+      <layout class="QHBoxLayout" name="horizontalLayout_5"/>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>90</y>
+        <width>171</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_7">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_L1">
-         <item>
-          <widget class="QLineEdit" name="L1_x1"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_x1_L1">
-           <property name="text">
-            <string>X1</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_plus_x1_L1">
-           <property name="text">
-            <string>+</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="L1_x2"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_x2_L1">
-           <property name="text">
-            <string>X2</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_plus_x2_L1">
-           <property name="text">
-            <string>+</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="L1_x3"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_x3_L1">
-           <property name="text">
-            <string>X3</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_plus_x3_L1">
-           <property name="text">
-            <string>+</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="L1_x4"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_x4_L1">
-           <property name="text">
-            <string>X4</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="comboBox_L1">
-           <item>
-            <property name="text">
-             <string>≤</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>=</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>≥</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="L1_base"/>
-         </item>
-        </layout>
+        <widget class="QLabel" name="label_11">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Z=</string>
+         </property>
+        </widget>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_L1_2">
-         <item>
-          <widget class="QLineEdit" name="L2_x1"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_x1_L2">
-           <property name="text">
-            <string>X1</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_plus_x1_L2">
-           <property name="text">
-            <string>+</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="L2_x2"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_x2_L2">
-           <property name="text">
-            <string>X2</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_plus_x2_L2">
-           <property name="text">
-            <string>+</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="L2_x3"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_x3_L2">
-           <property name="text">
-            <string>X3</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_plus_x3_L2">
-           <property name="text">
-            <string>+</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="L2_x4"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_x4_L2">
-           <property name="text">
-            <string>X4</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="comboBox_L2">
-           <item>
-            <property name="text">
-             <string>≤</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>=</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>≥</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="L2_base"/>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_L1_3">
-         <item>
-          <widget class="QLineEdit" name="L3_x1"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_x1_L3">
-           <property name="text">
-            <string>X1</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_plus_x1_L3">
-           <property name="text">
-            <string>+</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="L3_x2"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_x2_L3">
-           <property name="text">
-            <string>X2</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_plus_x2_L3">
-           <property name="text">
-            <string>+</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="L3_x3"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_x3_L3">
-           <property name="text">
-            <string>X3</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_plus_x3_L3">
-           <property name="text">
-            <string>+</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="L3_x4"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_x4_L3">
-           <property name="text">
-            <string>X4</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="comboBox_L3">
-           <item>
-            <property name="text">
-             <string>≤</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>=</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>≥</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="L3_base"/>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_L1_4">
-         <item>
-          <widget class="QLineEdit" name="L4_x1"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_x1_L4">
-           <property name="text">
-            <string>X1</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_plus_x1_L4">
-           <property name="text">
-            <string>+</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="L4_x2"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_x2_L4">
-           <property name="text">
-            <string>X2</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_plus_x2_L4">
-           <property name="text">
-            <string>+</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="L4_x3"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_x3_L4">
-           <property name="text">
-            <string>X3</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_plus_x3_L4">
-           <property name="text">
-            <string>+</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="L4_x4"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_x4_L4">
-           <property name="text">
-            <string>X4</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="comboBox_L4">
-           <item>
-            <property name="text">
-             <string>≤</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>=</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>≥</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="L4_base"/>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_L1_5">
-         <item>
-          <widget class="QLineEdit" name="L5_x1"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_x1_L5">
-           <property name="text">
-            <string>X1</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_plus_x1_L5">
-           <property name="text">
-            <string>+</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="L5_x2"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_x2_L5">
-           <property name="text">
-            <string>X2</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_plus_x2_L5">
-           <property name="text">
-            <string>+</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="L5_x3"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_x3_L5">
-           <property name="text">
-            <string>X3</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_plus_x3_L5">
-           <property name="text">
-            <string>+</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="L5_x4"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_x4_L5">
-           <property name="text">
-            <string>X4</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="comboBox_L5">
-           <item>
-            <property name="text">
-             <string>≤</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>=</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>≥</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="L5_base"/>
-         </item>
-        </layout>
+        <widget class="QLabel" name="label_solucao_Z">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
-    </widget>
-    <widget class="QPushButton" name="pushButton_calcular">
-     <property name="geometry">
-      <rect>
-       <x>300</x>
-       <y>440</y>
-       <width>75</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Calcular</string>
-     </property>
+     <widget class="QLabel" name="label_otima">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>90</y>
+        <width>131</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>true</underline>
+       </font>
+      </property>
+      <property name="text">
+       <string>Solução Ótima!</string>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
@@ -726,7 +489,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1174</width>
+     <width>430</width>
      <height>21</height>
     </rect>
    </property>

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
+#include <QProcess>
 #include <iostream>
 
 #include "SistemasdeControle/headers/restrictedOptimization/activeset.h"
@@ -25,6 +26,12 @@ public:
 
 private slots:
     void on_pushButton_continuar_clicked();
+
+    void on_pushButton_calcular_clicked();
+
+    void on_pushButton_reiniciar_clicked();
+
+    void on_comboBox_objetivo_currentTextChanged(const QString &arg1);
 
 private:
     Ui::MainWindow *ui;
